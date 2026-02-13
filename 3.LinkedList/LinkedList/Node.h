@@ -11,12 +11,12 @@ class Node
 
 	// 노드의 생성은 LinkedList에서만 가능하도록 private으로 지정
 private:
-	Node();
+	Node()
 	: data(), next(nullptr)
 	{
 	}
 
-	Node(T data);
+	Node(T data)
 	: data(data), next(nullptr)
 	{
 	}
