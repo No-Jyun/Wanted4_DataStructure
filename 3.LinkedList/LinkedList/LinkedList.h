@@ -20,7 +20,25 @@ public:
 
 	~LinkedList()
 	{
-		// Todo: 메모리 정리
+		// 메모리 정리
+		NodeType current = head;
+		NodeType next = nullptr;
+
+		while (current)
+		{
+			// 삭제하기 전에 다음 노드 미리 저장
+			next = current->next;
+
+			// 삭제
+			delete current;
+
+			// 다음 노드로 이동
+			current = next;
+		}
+
+		// 정리
+		head = nullptr;
+		count = 0;
 	}
 
 	// 노드 추가 함수

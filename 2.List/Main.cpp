@@ -1,8 +1,18 @@
 #include <iostream>
 #include "List.h"
+//#include <list>
+//#include <forward_list>
 
 int main()
 {
+	//std::forward_list<int> stlList;
+	//stlList.emplace_after(stlList.begin(), 10);
+	//
+	//for (auto item : stlList)
+	//{
+	//	std::cout << item << ' ';
+	//}
+
 	List<int> list;
 	for (int ix = 0; ix < 10; ix++)
 	{
