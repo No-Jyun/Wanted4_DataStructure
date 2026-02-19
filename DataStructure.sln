@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4.DoubliyLinkedList", "4.Do
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "5. Stack", "5. Stack\5. Stack.vcxproj", "{901840C0-AB0B-400D-BF33-2528FB90E1F1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6.StackMaze", "6.StackMaze\6.StackMaze.vcxproj", "{79D08382-4AD1-45EB-8F42-9810D0525A91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -39,6 +41,10 @@ Global
 		{901840C0-AB0B-400D-BF33-2528FB90E1F1}.Debug|x64.Build.0 = Debug|x64
 		{901840C0-AB0B-400D-BF33-2528FB90E1F1}.Release|x64.ActiveCfg = Release|x64
 		{901840C0-AB0B-400D-BF33-2528FB90E1F1}.Release|x64.Build.0 = Release|x64
+		{79D08382-4AD1-45EB-8F42-9810D0525A91}.Debug|x64.ActiveCfg = Debug|x64
+		{79D08382-4AD1-45EB-8F42-9810D0525A91}.Debug|x64.Build.0 = Debug|x64
+		{79D08382-4AD1-45EB-8F42-9810D0525A91}.Release|x64.ActiveCfg = Release|x64
+		{79D08382-4AD1-45EB-8F42-9810D0525A91}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
