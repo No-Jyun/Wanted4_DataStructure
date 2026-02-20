@@ -16,10 +16,10 @@ public:
 	~HashTable();
 
 	// 키-값 조합으로 저장할 수 있도록
-	void Add(const std::string& key, const std::string& value);
+	bool Add(const std::string& key, const std::string& value);
 
 	// 삭제-키를 활용해 K-Value 조합데이터 삭제
-	void Delete(const std::string& key);
+	bool Delete(const std::string& key);
 
 	// 검색 함수
 	bool Find(const std::string key, Entry& outEntry);
