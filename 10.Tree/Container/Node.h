@@ -59,11 +59,12 @@ public:
 	{
 		// 하위 노드까지 순회하면서 노드 검색 후 삭제
 		// 재귀 함수
+		RemoveChildRecursive(child);
 	}
 
 	// Getter/Setter
 	inline T GetData() const { return data; }
-	inline std::vector<Node<T>*>& GetChildren() const { return children; }
+	inline std::vector<Node<T>*>& GetChildren() { return children; }
 	inline Node<T>* GetParent() const { return parent; }
 	inline void SetParent(Node<T>* newParent) { parent = newParent; }
 
@@ -106,8 +107,27 @@ private:
 		}
 
 		// 경우의 수2 - 자손 노드가 있는 경우
+		while (children.size() > 0)
+		{
+			// 자손을 순회하면서 재귀 삭제 함수 호출
+			RemoveChildRecursive(children[0]);
+		}
 
 		// 마무리
+		// 부모 노드의 자손 목록 가져오기
+		auto& parentVector = child->GetParent()->GetChildren();
+
+		// 자손 목록에서 삭제할 노드 검색 (반환 타입은 Iterator)
+		auto childIt = std::find(parentVector.begin(), parentVector.end(), child);
+
+		// 자손 목록에서 노드 검색에 성공했으면, 해당 노드 제거
+		if (childIt != parentVector.end())
+		{
+			parentVector.erase(childIt);
+		}
+
+		// 노드 삭제
+		SafeDelete(child);
 	}
 
 private:
