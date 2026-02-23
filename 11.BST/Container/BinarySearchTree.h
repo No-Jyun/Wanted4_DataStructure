@@ -13,7 +13,8 @@ public:
 
 	~BinarySearchTree()
 	{
-		// Todo: 트리 제거 함수 구현 후 호출
+		// 트리 제거 함수 호출
+		Destroy();
 	}
 
 	// 삽입
@@ -225,6 +226,43 @@ private:
 	}
 
 	// 파괴 함수
+	void Destroy()
+	{
+		// 빈 트리 (root 가 null) 인 경우에는 함수 종료
+		if (!root)
+		{
+			return;
+		}
+
+		// 루트 노드부터 제거
+		DestroyRecursive(root);
+	}
+
+	// 파괴 재귀 함수
+	void DestroyRecursive(Node<T>* node)
+	{
+		// 종료 조건
+		if (!node)
+		{
+			return;
+		}
+
+		// 자손이 없는 경우 처리
+		if (!node->left && !node->right)
+		{
+			delete node;
+			return;
+		}
+
+		// 왼쪽 하위 트리 삭제
+		DestroyRecursive(node->left);
+
+		// 오른쪽 하위 트리 삭제
+		DestroyRecursive(node->right);
+
+		// 노드 정리
+		delete node;
+	}
 
 private:
 	// 루트 노드
