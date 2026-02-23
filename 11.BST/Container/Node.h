@@ -11,7 +11,7 @@ class Node
 	friend class BinarySearchTree;
 
 public:
-	Node(const T& data, const Node<T>* const parent = nullptr)
+	Node(const T& data, Node<T>* const parent = nullptr)
 		: data(data), parent(parent)
 	{
 	}
